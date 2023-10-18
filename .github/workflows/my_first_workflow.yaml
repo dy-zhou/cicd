@@ -5,7 +5,7 @@ on:
 
 jobs:
     my_first_ci:
-        runs-on: ubuntu-latesy
+        runs-on: ubuntu-latest
 
         steps:
         - name: get date in Github
