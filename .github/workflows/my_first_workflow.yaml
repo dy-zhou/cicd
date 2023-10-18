@@ -1,4 +1,4 @@
-name: My First flow
+name: My First workflow
 on:
     # any push will trigger this flow
 - push
@@ -15,6 +15,10 @@ jobs:
         - name: list directory
           id: list_directory
           run: echo "$(ls -l)"
+
+        - name: fail the job
+          id: fail_the_job
+          run: exit 0
 
         - name: echo github context
           id: echo_github_context
