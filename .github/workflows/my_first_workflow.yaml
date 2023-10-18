@@ -1,0 +1,23 @@
+name: My First flow
+on:
+    # any push will trigger this flow
+- push
+
+jobs:
+    my_first_ci:
+        runs-on: ubuntu-latesy
+
+        steps:
+        - name: get date in Github
+          id: get_date_in_github
+          run: echo "date in github $(date)"
+
+        - name: list directory
+          id: list_directory
+          run: echo "$(ls -l)"
+
+        - name: echo github context
+          id: echo_github_context
+          run: "ref_name ${{github.ref_name}}\n repository ${{github.action_repository}}\n owner${{github.repository_owner}}"
+        
+    
